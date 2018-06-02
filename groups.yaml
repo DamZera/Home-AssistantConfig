@@ -1,0 +1,36 @@
+default_view:
+  name: Home
+  view: yes
+  entities:
+    - sun.sun
+    - sensor.waze_travel_time
+    - group.damien_room
+    - group.living_room
+    - weather.juziers
+
+maintenance_view:
+  name: Maintenance
+  view: yes
+  entities:
+    - group.monitor
+
+# Groups (CARDS)
+damien_room:
+  name: Damien's room
+  entities:
+    - sensor.temperature
+    - sensor.humidite
+
+living_room:
+  name: Salon
+  entities:
+    - sensor.temperature_salon
+    - sensor.humidite_salon
+
+monitor:
+  name: Monitor
+  entities:
+    - sensor.disk_use_percent_home
+    - sensor.memory_free
+    - sensor.network_in_eth0
+    - sensor.network_out_eth0
