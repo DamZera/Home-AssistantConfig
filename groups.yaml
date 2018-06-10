@@ -18,8 +18,12 @@ maintenance_view:
 damien_room:
   name: Damien's room
   entities:
-    - sensor.temperature
-    - sensor.humidite
+    #- sensor.temperature
+    #- sensor.humidite
+    - sensor.tp_link_amps
+    - sensor.tp_link_kw
+    - sensor.tp_link_volts
+    - sensor.tp_link_watts
 
 living_room:
   name: Salon

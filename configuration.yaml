@@ -101,6 +101,20 @@ sensor:
         arg: eth0
       - type: network_out
         arg: eth0
+  - platform: template
+    sensors:
+      tp_link_amps:
+        value_template: '{{ states.switch.tplink_switch_hs110.attributes["current_a"] | replace(" A", "") | float }}'
+        unit_of_measurement: 'A'
+      tp_link_watts:
+        value_template: '{{ states.switch.tplink_switch_hs110.attributes["current_power_w"] | replace(" W", "") | float }}'
+        unit_of_measurement: 'W'
+      tp_link_kw:
+        value_template: '{{ states.switch.tplink_switch_hs110.attributes["total_energy_kwh"] | replace(" kW", "") | float }}'
+        unit_of_measurement: 'kW'
+      tp_link_volts:
+        value_template: '{{ states.switch.tplink_switch_hs110.attributes["voltage"] | replace(" V", "") | float }}'
+        unit_of_measurement: 'V'
 
 # Weather prediction
 weather:
@@ -114,6 +128,11 @@ tts:
 
 # Cloud
 cloud:
+
+switch:
+  - platform: tplink
+    host: 192.168.31.246
+    name: tplink_switch_hs110
 
 group: !include groups.yaml
 automation: !include automations.yaml

@@ -1,0 +1,14 @@
+sensor.humidite_salon:
+  icon: mdi:water-percent
+sensor.tp_link_amps:
+  friendly_name: Ampérage
+  icon: mdi:gauge
+sensor.tp_link_kw:
+  friendly_name: Consommation (kw)
+  icon: mdi:gauge
+sensor.tp_link_volts:
+  friendly_name: Voltage
+  icon: mdi:gauge
+sensor.tp_link_watts:
+  friendly_name: Consommation (w)
+  icon: mdi:gauge
