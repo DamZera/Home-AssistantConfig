@@ -63,6 +63,21 @@ mqtt:
 # Track the sun
 sun:
 
+# ffmpeg to manage camera ip
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+
+# ONVIF1 camera (rstp)
+camera:
+  - platform: onvif
+    host: !secret ip_camera_1
+    username: !secret user_camera_1
+    password: !secret pass_camera_1
+
+binary_sensor:
+  - platform: ffmpeg_motion
+    input: !secret input_camera_1
+
 sensor:
   - platform: waze_travel_time
     origin: !secret home_waze_city

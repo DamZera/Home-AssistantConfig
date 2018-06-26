@@ -4,7 +4,9 @@ default_view:
   entities:
     - sun.sun
     - sensor.waze_travel_time
+    - binary_sensor.ffmpeg_motion
     - group.damien_room
+    - camera.onvif_camera
     - group.living_room
     - weather.juziers
 
